@@ -1,0 +1,29 @@
+{
+  "name": "gdmec_BoXueGu",
+  "version": "1.0.0",
+  "description": "gdmec 移动应用项目开发综合课程项目源码仓库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cl": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moreant/gdmec-bxg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moreant/gdmec-bxg/issues"
+  },
+  "homepage": "https://github.com/moreant/gdmec-bxg#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
