@@ -14,9 +14,15 @@
     window.$docsify = {
       name: 'BoXueGu',
       repo: 'https://github.com/moreant/gdmec-bxg',
-      loadSidebar: true
+      loadSidebar: true,
+      subMaxLevel: 2,
+      search:{
+        placeholder: '搜索',
+        noData: '没有找到！',
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-# 1.0.0 (2020-05-28)
+# [1.0.0](https://github.com/moreant/gdmec-bxg/compare/d2f419c27b9c0cb28fec6261d9373fb2cc048d8a...v1.0.0) (2020-05-28)
 
 
 ### Features
