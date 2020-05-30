@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/moreant/gdmec-bxg/compare/v1.1.1...v1.2.0) (2020-05-30)
+
+
+### Features
+
+* **0324:** 登录界面逻辑 ([8447988](https://github.com/moreant/gdmec-bxg/commit/84479888ce10a3f032ed7a2e1e3c1af0182e9716))
+
+
+
 ## [1.1.1](https://github.com/moreant/gdmec-bxg/compare/v1.1.0...v1.1.1) (2020-05-30)
 
 
