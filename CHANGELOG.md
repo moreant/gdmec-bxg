@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/moreant/gdmec-bxg/compare/v1.1.0...v1.1.1) (2020-05-30)
+
+
+### Features
+
+* **0323:** 注册页面逻辑代码 ([589c6d2](https://github.com/moreant/gdmec-bxg/commit/589c6d2f22595078ddee7421168322619b07c282))
+
+
+
 # [1.1.0](https://github.com/moreant/gdmec-bxg/compare/v1.0.2...v1.1.0) (2020-05-30)
 
 
