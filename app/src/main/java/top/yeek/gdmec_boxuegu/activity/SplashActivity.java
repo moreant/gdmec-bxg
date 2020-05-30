@@ -14,7 +14,6 @@ import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import top.yeek.gdmec_boxuegu.MainActivity;
 import top.yeek.gdmec_boxuegu.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -32,7 +31,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void init() {
-        tvVersion = (TextView) findViewById(R.id.tv_version);
         try {
             PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), 0);
             tvVersion.setText("v" + info.versionName);

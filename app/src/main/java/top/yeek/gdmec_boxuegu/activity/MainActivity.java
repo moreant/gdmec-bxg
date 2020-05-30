@@ -1,8 +1,10 @@
-package top.yeek.gdmec_boxuegu;
+package top.yeek.gdmec_boxuegu.activity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import top.yeek.gdmec_boxuegu.R;
 
 public class MainActivity extends AppCompatActivity {
 

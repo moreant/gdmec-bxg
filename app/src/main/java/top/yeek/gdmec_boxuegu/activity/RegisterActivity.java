@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,12 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etPswAgain;
     @BindView(R.id.btn_register)
     Button btnRegister;
-    @BindView(R.id.activity_register)
-    LinearLayout activityRegister;
 
-    private String mUserName;
-    private String mPsw;
-    private String mPsw_again;
+    private String userName;
+    private String psw;
+    private String psw_again;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void getEditString() {
-        mUserName = etUserName.getText().toString().trim();
-        mPsw = etPsw.getText().toString().trim();
-        mPsw_again = etPswAgain.getText().toString().trim();
+        userName = etUserName.getText().toString().trim();
+        psw = etPsw.getText().toString().trim();
+        psw_again = etPswAgain.getText().toString().trim();
     }
 
     @OnClick({R.id.tv_back, R.id.btn_register})
@@ -83,21 +80,21 @@ public class RegisterActivity extends AppCompatActivity {
                 break;
             case R.id.btn_register:
                 getEditString();
-                if (TextUtils.isEmpty(mUserName)) {
+                if (TextUtils.isEmpty(userName)) {
                     Toast.makeText(RegisterActivity.this, "请输入用户名", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(mPsw)) {
+                } else if (TextUtils.isEmpty(psw)) {
                     Toast.makeText(RegisterActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
-                } else if (TextUtils.isEmpty(mPsw)) {
+                } else if (TextUtils.isEmpty(psw_again)) {
                     Toast.makeText(RegisterActivity.this, "请再次输入密码", Toast.LENGTH_SHORT).show();
-                } else if (!mPsw.equals(mPsw_again)) {
+                } else if (!psw.equals(psw_again)) {
                     Toast.makeText(RegisterActivity.this, "输入两次的密码不一样", Toast.LENGTH_SHORT).show();
-                } else if (isExistUserName(mUserName)) {
+                } else if (isExistUserName(userName)) {
                     Toast.makeText(RegisterActivity.this, "次用户名已存在", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                    saveRegisterInfo(mUserName, mPsw);
+                    saveRegisterInfo(userName, psw);
                     Intent data = new Intent();
-                    data.putExtra("userName", mUserName);
+                    data.putExtra("userName", userName);
                     setResult(RESULT_OK, data);
                     RegisterActivity.this.finish();
                 }
