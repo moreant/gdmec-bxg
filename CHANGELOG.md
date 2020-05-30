@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/moreant/gdmec-bxg/compare/v1.0.2...v1.1.0) (2020-05-30)
+
+
+### Documentation
+
+* 重新定义版本号 ([c354507](https://github.com/moreant/gdmec-bxg/commit/c354507377270737ad2ce8b5e7acd944e0a346c9))
+
+
+### BREAKING CHANGES
+
+* 每月一个大版本 major 每周一个中版本minor 每日一个小版本 patch
+
+
+
 ## [1.0.2](https://github.com/moreant/gdmec-bxg/compare/v1.0.0...v1.0.2) (2020-05-30)
 
 
