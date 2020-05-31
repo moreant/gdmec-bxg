@@ -28,7 +28,8 @@
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:background="#F2F2F2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:id="@+id/rl_course"
@@ -37,7 +38,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/img_course"
+                android:id="@+id/iv_course"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:layout_alignParentTop="true"
@@ -66,7 +67,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/img_exercises"
+                android:id="@+id/iv_exercises"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:layout_alignParentTop="true"
@@ -89,13 +90,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_myinfo"
+            android:id="@+id/rl_my"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/img_myinfo"
+                android:id="@+id/iv_my"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:layout_alignParentTop="true"
@@ -104,7 +105,7 @@
                 android:src="@drawable/main_my_icon" />
 
             <TextView
-                android:id="@+id/tv_myinfo"
+                android:id="@+id/tv_my"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

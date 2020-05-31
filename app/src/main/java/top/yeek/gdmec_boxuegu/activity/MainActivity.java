@@ -31,24 +31,24 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout titleBar;
     @BindView(R.id.fl_body)
     FrameLayout flBody;
-    @BindView(R.id.img_course)
-    ImageView imgCourse;
+    @BindView(R.id.iv_course)
+    ImageView ivCourse;
     @BindView(R.id.tv_course)
     TextView tvCourse;
     @BindView(R.id.rl_course)
     RelativeLayout rlCourse;
-    @BindView(R.id.img_exercises)
-    ImageView imgExercises;
+    @BindView(R.id.iv_exercises)
+    ImageView ivExercises;
     @BindView(R.id.tv_exercises)
     TextView tvExercises;
     @BindView(R.id.rl_exercises)
     RelativeLayout rlExercises;
-    @BindView(R.id.img_myinfo)
-    ImageView imgMyinfo;
-    @BindView(R.id.tv_myinfo)
-    TextView tvMyinfo;
-    @BindView(R.id.rl_myinfo)
-    RelativeLayout rlMyinfo;
+    @BindView(R.id.iv_my)
+    ImageView ivMy;
+    @BindView(R.id.tv_my)
+    TextView tvMy;
+    @BindView(R.id.rl_my)
+    RelativeLayout rlMy;
     @BindView(R.id.ll_bottom_bar)
     LinearLayout llBottomBar;
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.rl_course, R.id.rl_exercises, R.id.rl_myinfo})
+    @OnClick({R.id.rl_course, R.id.rl_exercises, R.id.rl_my})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             // 课程
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 selectDisplayView(1);
                 break;
             // 我
-            case R.id.rl_myinfo:
+            case R.id.rl_my:
                 clearBottomImagesState();
                 selectDisplayView(2);
                 break;
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 设置视图
      *
-     * @param index
+     * @param index 索引
      */
     private void selectDisplayView(int index) {
         removeAllView();
@@ -108,14 +108,14 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 设置标题栏底部栏
      *
-     * @param index
+     * @param index 索引
      */
     private void setSelectedStatus(int index) {
         switch (index) {
             case 0:
                 //课程
                 rlCourse.setSelected(true);
-                imgCourse.setImageResource(R.drawable.main_course_icon_selected);
+                ivCourse.setImageResource(R.drawable. main_course_icon_selected);
                 tvCourse.setTextColor(Color.parseColor("#0097f7"));
                 titleBar.setVisibility(View.VISIBLE);
                 tvMainTitle.setText("博学谷课程");
@@ -123,16 +123,16 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 // 习题
                 rlExercises.setSelected(true);
-                imgExercises.setImageResource(R.drawable.main_exercises_icon_selected);
+                ivExercises.setImageResource(R.drawable.main_exercises_icon_selected);
                 tvExercises.setTextColor(Color.parseColor("#0097f7"));
                 titleBar.setVisibility(View.VISIBLE);
                 tvMainTitle.setText("博学谷习题");
                 break;
             case 2:
                 // 我的
-                rlMyinfo.setSelected(true);
-                imgMyinfo.setImageResource(R.drawable.main_my_icon_selected);
-                tvMyinfo.setTextColor(Color.parseColor("#0097f7"));
+                rlMy.setSelected(true);
+                ivMy.setImageResource(R.drawable.main_my_icon_selected);
+                tvMy.setTextColor(Color.parseColor("#0097f7"));
                 titleBar.setVisibility(View.GONE);
                 break;
         }
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 创建视图
      *
-     * @param index
+     * @param index 索引
      */
     private void createView(int index) {
         switch (index) {
@@ -175,11 +175,11 @@ public class MainActivity extends AppCompatActivity {
     private void clearBottomImagesState() {
         tvCourse.setTextColor(Color.parseColor("#666666"));
         tvExercises.setTextColor(Color.parseColor("#666666"));
-        tvMyinfo.setTextColor(Color.parseColor("#666666"));
+        tvMy.setTextColor(Color.parseColor("#666666"));
 
-        imgCourse.setImageResource(R.drawable.main_course_icon);
-        imgExercises.setImageResource(R.drawable.main_exercises_icon);
-        imgMyinfo.setImageResource(R.drawable.main_my_icon);
+        ivCourse.setImageResource(R.drawable.main_course_icon);
+        ivExercises.setImageResource(R.drawable.main_exercises_icon);
+        ivMy.setImageResource(R.drawable.main_my_icon);
 
 
         for (int i = 0; i < llBottomBar.getChildCount(); i++) {
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 读取登录状态
      *
-     * @return
+     * @return true：已登录
      */
     private boolean readLoginStatus() {
         SharedPreferences sp = getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
