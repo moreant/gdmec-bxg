@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_view_info"
+    android:id="@+id/main_view_my"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/layout_head"
+        android:id="@+id/ll_head"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:background="@drawable/myinfo_login_bg"
