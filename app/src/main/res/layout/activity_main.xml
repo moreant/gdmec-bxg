@@ -16,14 +16,14 @@
         <include layout="@layout/main_title_bar" />
 
         <FrameLayout
-            android:id="@+id/main_body"
+            android:id="@+id/fl_body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/main_bottom_bar"
+        android:id="@+id/ll_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
@@ -31,90 +31,90 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:id="@+id/bottom_bar_course_btn"
+            android:id="@+id/rl_course"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/bottom_bar_image_course"
+                android:id="@+id/img_course"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                android:src="@drawable/main_course_icon"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/main_course_icon" />
 
             <TextView
-                android:id="@+id/bottom_bar_text_course"
+                android:id="@+id/tv_course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:maxLines="1"
                 android:text="课程"
-                android:textSize="14sp"
-                android:maxLines="1"
-                android:layout_marginBottom="3dp"
-                android:gravity="center"
                 android:textColor="#666666"
-                android:layout_centerHorizontal="true"
-               android:layout_alignParentBottom="true" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/bottom_bar_exercises_btn"
+            android:id="@+id/rl_exercises"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/bottom_bar_image_exercises"
+                android:id="@+id/img_exercises"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                android:src="@drawable/main_exercises_icon"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/main_exercises_icon" />
 
             <TextView
-                android:id="@+id/bottom_bar_text_exercises"
+                android:id="@+id/tv_exercises"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:maxLines="1"
                 android:text="习题"
-                android:textSize="14sp"
-                android:maxLines="1"
-                android:layout_marginBottom="3dp"
-                android:gravity="center"
                 android:textColor="#666666"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/bottom_bar_myinfo_btn"
+            android:id="@+id/rl_myinfo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/bottom_bar_image_myinfo"
+                android:id="@+id/img_myinfo"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                android:src="@drawable/main_my_icon"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="3dp"
+                android:src="@drawable/main_my_icon" />
 
             <TextView
-                android:id="@+id/bottom_bar_text_myinfo"
+                android:id="@+id/tv_myinfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="我"
-                android:textSize="14sp"
-                android:maxLines="1"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="3dp"
                 android:gravity="center"
+                android:maxLines="1"
+                android:text="我"
                 android:textColor="#666666"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true" />
+                android:textSize="14sp" />
         </RelativeLayout>
     </LinearLayout>
 
