@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         // 设置标题栏
-        activityRegister.setBackgroundColor(Color.TRANSPARENT);
+        titleBar.setBackgroundColor(Color.TRANSPARENT);
         tvMainTitle.setText("注册");
     }
 
