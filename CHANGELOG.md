@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/moreant/gdmec-bxg/compare/v1.3.1...v1.4.0) (2020-05-31)
+
+
+### Features
+
+* 返回退出 ([6ec70dd](https://github.com/moreant/gdmec-bxg/commit/6ec70ddae3fd443fce4868b7dbd535f85fd830ab))
+* **0407:** “我”的界面布局 ([7e8470c](https://github.com/moreant/gdmec-bxg/commit/7e8470cc7971de5bc0964f64beb835e82518d4d4))
+* **0407:** “我”的界面视图初始化 ([0aa7ab2](https://github.com/moreant/gdmec-bxg/commit/0aa7ab2809e44daa120f53cdf7ed9baf095cf8d0))
+
+
+
 ## [1.3.1](https://github.com/moreant/gdmec-bxg/compare/v1.3.0...v1.3.1) (2020-05-31)
 
 
