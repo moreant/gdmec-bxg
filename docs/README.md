@@ -11,7 +11,9 @@ gdmec 移动应用项目开发综合课程项目源码仓库
 
 ## 版本规范
 
-[语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+主要遵循 [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+
+一周对应一个次版本
 
 
 
