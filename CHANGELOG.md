@@ -1,3 +1,22 @@
+## [1.3.1](https://github.com/moreant/gdmec-bxg/compare/v1.3.0...v1.3.1) (2020-05-31)
+
+
+### Documentation
+
+* 版本规范使用 语义化版本 2.0.0 ([9e55927](https://github.com/moreant/gdmec-bxg/commit/9e55927b724f6564e1cc6223f9fef417200c4d52))
+
+
+### BREAKING CHANGES
+
+* 版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
+1. 主版本号：当你做了不兼容的 API 修改，
+2. 次版本号：当你做了向下兼容的功能性新增，
+3. 修订号：当你做了向下兼容的问题修正。
+
+具体内容请见 [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
+
+
+
 # [1.3.0](https://github.com/moreant/gdmec-bxg/compare/v1.2.0...v1.3.0) (2020-05-31)
 
 
