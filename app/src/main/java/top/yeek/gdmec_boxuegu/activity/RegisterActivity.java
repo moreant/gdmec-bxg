@@ -49,11 +49,17 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+        // 设置标题栏
         activityRegister.setBackgroundColor(Color.TRANSPARENT);
         tvMainTitle.setText("注册");
     }
 
 
+    /**
+     * 保存用户注册信息到sp
+     * @param userName 用户名
+     * @param psw 密码
+     */
     private void saveRegisterInfo(String userName, String psw) {
         String md5Psw = MD5Utils.md5(psw);
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
@@ -62,6 +68,11 @@ public class RegisterActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * 检查用户是否已存在
+     * @param userName 用户名
+     * @return true 存在；false不存在
+     */
     private boolean isExistUserName(String userName) {
         boolean has_userName = false;
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
@@ -72,11 +83,15 @@ public class RegisterActivity extends AppCompatActivity {
         return has_userName;
     }
 
+    /**
+     * 获取输入框的内容
+     */
     private void getEditString() {
         userName = etUserName.getText().toString().trim();
         psw = etPsw.getText().toString().trim();
         psw_again = etPswAgain.getText().toString().trim();
     }
+
 
     @OnClick({R.id.tv_back, R.id.btn_register})
     public void onViewClicked(View view) {

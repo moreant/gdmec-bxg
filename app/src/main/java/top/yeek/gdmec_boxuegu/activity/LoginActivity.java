@@ -22,6 +22,9 @@ import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
 import top.yeek.gdmec_boxuegu.utils.MD5Utils;
 
+/**
+ * 登录界面逻辑
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.tv_back)
@@ -55,9 +58,11 @@ public class LoginActivity extends AppCompatActivity {
         tvMainTitle.setText("登录");
     }
 
+    // 点击事件
     @OnClick({R.id.tv_back, R.id.btn_login, R.id.tv_register, R.id.tv_find_psw})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            // 回到上一页
             case R.id.tv_back:
                 LoginActivity.this.finish();
                 break;
@@ -67,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 String md5Psw = MD5Utils.md5(psw);
                 spPsw = readPsw(userName);
 
+                // 输入验证
                 if (TextUtils.isEmpty(userName)) {
                     Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(psw)) {
@@ -94,6 +100,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 保存登录信息
+     *
+     * @param userName 用户名
+     */
     private void saveLoginStatus(String userName) {
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -102,11 +113,24 @@ public class LoginActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * 读取密码
+     *
+     * @param userName 用户名
+     * @return 用户名对应的密码
+     */
     private String readPsw(String userName) {
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
         return sp.getString(userName, "");
     }
 
+    /**
+     * 读取注册页面返回的数据
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
