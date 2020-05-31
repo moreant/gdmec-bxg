@@ -2,11 +2,13 @@ package top.yeek.gdmec_boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etPswAgain;
     @BindView(R.id.btn_register)
     Button btnRegister;
+    @BindView(R.id.activity_register)
+    LinearLayout activityRegister;
 
     private String userName;
     private String psw;
@@ -45,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+        activityRegister.setBackgroundColor(Color.TRANSPARENT);
+        tvMainTitle.setText("注册");
     }
 
 

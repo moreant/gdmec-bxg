@@ -2,11 +2,13 @@ package top.yeek.gdmec_boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView tvRegister;
     @BindView(R.id.tv_find_psw)
     TextView tvFindPsw;
+    @BindView(R.id.activity_login)
+    LinearLayout activityLogin;
     private String userName;
     private String psw;
     private String spPsw;
@@ -47,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        activityLogin.setBackgroundColor(Color.TRANSPARENT);
+        tvMainTitle.setText("登录");
     }
 
     @OnClick({R.id.tv_back, R.id.btn_login, R.id.tv_register, R.id.tv_find_psw})
@@ -67,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
                 } else if (!md5Psw.equals(spPsw) && TextUtils.isEmpty(spPsw)) {
                     Toast.makeText(this, "输入的用户名和密码不一致", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(spPsw)) {
+                    Toast.makeText(this, "用户名不存在", Toast.LENGTH_SHORT).show();
                 } else if (md5Psw.equals(spPsw)) {
                     Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
                     saveLoginStatus(userName);
