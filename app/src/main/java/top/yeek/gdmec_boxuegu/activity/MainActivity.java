@@ -1,7 +1,10 @@
 package top.yeek.gdmec_boxuegu.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -51,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -58,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
         tvBack.setVisibility(View.GONE);
         tvMainTitle.setText("博学谷课程");
         titleBar.setBackgroundColor(Color.parseColor("#30B4FF"));
+        setInitStatus();
+    }
+
+    private void setInitStatus() {
+        clearBottomImagesState();
+        setSelectedStatus(0);
+        createView(0);
     }
 
 
@@ -169,8 +181,52 @@ public class MainActivity extends AppCompatActivity {
         imgExercises.setImageResource(R.drawable.main_exercises_icon);
         imgMyinfo.setImageResource(R.drawable.main_my_icon);
 
+
         for (int i = 0; i < llBottomBar.getChildCount(); i++) {
             llBottomBar.getChildAt(i).setSelected(false);
         }
+    }
+
+    protected long exitTime;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 退出博学谷
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                MainActivity.this.finish();
+                if (readLoginStatus()) {
+                    clearLoginStatus();
+                }
+                // 正常退出
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * 清除登录状态
+     */
+    private void clearLoginStatus() {
+        SharedPreferences sp = getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean("isLogin", false);
+        editor.putString("loginUserName", "");
+        editor.apply();
+    }
+
+    /**
+     * 读取登录状态
+     *
+     * @return
+     */
+    private boolean readLoginStatus() {
+        SharedPreferences sp = getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
+        return sp.getBoolean("isLogin", false);
     }
 }
