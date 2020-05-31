@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/moreant/gdmec-bxg/compare/v1.2.0...v1.3.0) (2020-05-31)
+
+
+### Bug Fixes
+
+* 修复标题栏和补充用户名不存在提示 ([5d4e309](https://github.com/moreant/gdmec-bxg/commit/5d4e30968ae7b4a21b44530b6cb8b61544da8abc))
+* 修复注册界面无背景 ([13ef801](https://github.com/moreant/gdmec-bxg/commit/13ef801d0fc9942939ea824255fb429050d2823f))
+
+
+### Features
+
+* **0330:** “我”的界面 ([4d957fe](https://github.com/moreant/gdmec-bxg/commit/4d957fe723186443eeb3ab2810ff96cff181a897))
+* **0331:** 导航栏和标题栏切换 ([3d1ff26](https://github.com/moreant/gdmec-bxg/commit/3d1ff26a59291813121c729ead10d81ea1647a8d))
+
+
+
 # [1.2.0](https://github.com/moreant/gdmec-bxg/compare/v1.1.1...v1.2.0) (2020-05-30)
 
 
