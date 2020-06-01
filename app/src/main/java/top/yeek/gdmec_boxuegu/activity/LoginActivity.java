@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        activityLogin.setBackgroundColor(Color.TRANSPARENT);
+        titleBar.setBackgroundColor(Color.TRANSPARENT);
         tvMainTitle.setText("登录");
     }
 
