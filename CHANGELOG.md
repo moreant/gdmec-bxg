@@ -1,3 +1,21 @@
+# [1.5.0](https://github.com/moreant/gdmec-bxg/compare/v1.4.0...v1.5.0) (2020-06-01)
+
+
+### Bug Fixes
+
+* 修复我的界面没有分割线 ([d4202fe](https://github.com/moreant/gdmec-bxg/commit/d4202fe0b9220fbad558cb32203e86d07ff39e32))
+* **0324:** 修复登录界面背景消失和输入框高度不一 ([8479eec](https://github.com/moreant/gdmec-bxg/commit/8479eeca58387c7c2ef03bd04531b9e12084bf25))
+
+
+### Features
+
+* **0413:** 完成“我”的界面逻辑代码 ([ea3fb41](https://github.com/moreant/gdmec-bxg/commit/ea3fb414d6f91c3651ee857b654251613b6ca093))
+* **0413:** 添加设置界面 ([5a11b94](https://github.com/moreant/gdmec-bxg/commit/5a11b94f69ce17c94acd5dcb720f2b5c3fa1ccb3))
+* **0414:** 修改密码界面布局 ([609a040](https://github.com/moreant/gdmec-bxg/commit/609a0409e4e9bfce6b417e8512ab87f421e5f89d))
+* **0414:** 设置页面退出登录 ([909559d](https://github.com/moreant/gdmec-bxg/commit/909559d8508713bc4c26eb1c6d215597e757c6e3))
+
+
+
 # [1.4.0](https://github.com/moreant/gdmec-bxg/compare/v1.3.1...v1.4.0) (2020-05-31)
 
 
