@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
 import top.yeek.gdmec_boxuegu.activity.LoginActivity;
+import top.yeek.gdmec_boxuegu.activity.SettingActivity;
 import top.yeek.gdmec_boxuegu.utils.AnalysisUtils;
 
 public class MyView {
@@ -84,7 +85,9 @@ public class MyView {
                 break;
             case R.id.rl_setting:
                 if (readLoginStatus()) {
-                    Toast.makeText(activity, "设置", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(activity, SettingActivity.class);
+                    activity.startActivityForResult(intent, 1);
+
                 } else {
                     Toast.makeText(activity, "您还未登录", Toast.LENGTH_SHORT).show();
                 }
