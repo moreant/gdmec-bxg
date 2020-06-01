@@ -31,6 +31,7 @@ public class SettingActivity extends AppCompatActivity {
     RelativeLayout rlSecuritySetting;
     @BindView(R.id.rl_login_out)
     RelativeLayout rlLoginOut;
+    public static SettingActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
         tvMainTitle.setText("设置");
+        // 设置实例，使得其他界面能关闭本界面
+        instance = this;
         titleBar.setBackgroundColor(Color.parseColor("#30b4ff"));
     }
 
@@ -48,7 +51,8 @@ public class SettingActivity extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.rl_modify_password:
-                Toast.makeText(this, "修改密码", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, ModifyPswActivity.class));
+
                 break;
             case R.id.rl_security_setting:
                 Toast.makeText(this, "设置密保", Toast.LENGTH_SHORT).show();
