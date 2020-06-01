@@ -1,6 +1,7 @@
 package top.yeek.gdmec_boxuegu.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,15 +14,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
+import top.yeek.gdmec_boxuegu.view.MyView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MyView myView;
 
     @BindView(R.id.tv_back)
     TextView tvBack;
@@ -54,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             case 0:
                 //课程
                 rlCourse.setSelected(true);
-                ivCourse.setImageResource(R.drawable. main_course_icon_selected);
+                ivCourse.setImageResource(R.drawable.main_course_icon_selected);
                 tvCourse.setTextColor(Color.parseColor("#0097f7"));
                 titleBar.setVisibility(View.VISIBLE);
                 tvMainTitle.setText("博学谷课程");
@@ -155,7 +157,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 // 我的
-                Toast.makeText(this, "我的界面", Toast.LENGTH_SHORT).show();
+                if (myView == null) {
+                    myView = new MyView(this);
+                    flBody.addView(myView.getView());
+                } else {
+                    myView.getView();
+                }
+                myView.showView();
                 break;
         }
     }
@@ -197,12 +205,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
-                MainActivity.this.finish();
                 if (readLoginStatus()) {
                     clearLoginStatus();
                 }
+                MainActivity.this.finish();
                 // 正常退出
-                System.exit(0);
+                // 亲测会导致无法清除用户信息
+                // System.exit(0);
             }
             return true;
         }
@@ -228,5 +237,23 @@ public class MainActivity extends AppCompatActivity {
     private boolean readLoginStatus() {
         SharedPreferences sp = getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
         return sp.getBoolean("isLogin", false);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null) {
+            boolean isLogin = data.getBooleanExtra("isLogin", false);
+            if (isLogin) {
+                clearBottomImagesState();
+                selectDisplayView(2);
+            }
+
+            if (myView != null) {
+                myView.setLoginParams(isLogin);
+            }
+        }
+
+
     }
 }
