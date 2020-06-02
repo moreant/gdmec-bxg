@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
 import top.yeek.gdmec_boxuegu.utils.AnalysisUtils;
+import top.yeek.gdmec_boxuegu.utils.MD5Utils;
 
 public class FindPswActivity extends AppCompatActivity {
 
@@ -71,12 +72,57 @@ public class FindPswActivity extends AppCompatActivity {
                         this.finish();
                     }
                 }else{
-                    Toast.makeText(this, "找回密码", Toast.LENGTH_SHORT).show();
+                    String userName = etUsername.getText().toString().trim();
+                    String sp_security =  readSecurity(userName);
+                    if (TextUtils.isEmpty(userName)) {
+                        Toast.makeText(this, "请输入您的用户名", Toast.LENGTH_SHORT).show();
+                    } else if (!isExistUserName(userName)) {
+                        Toast.makeText(this, "您输入的用户名不存在", Toast.LENGTH_SHORT).show();
+                    } else if (!validateName.equals(sp_security)) {
+                        Toast.makeText(this, "输入的密保不正确", Toast.LENGTH_SHORT).show();
+                    } else {
+                        tvResetPassword.setVisibility(View.VISIBLE);
+                        tvResetPassword.setText("初始密码：123456");
+                        savePsw(userName);
+                    }
                 }
                 break;
         }
     }
 
+    private void savePsw(String userName) {
+        String md5Psw = MD5Utils.md5("123456");
+        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(userName, md5Psw);
+        editor.apply();
+    }
+
+    private boolean isExistUserName(String userName) {
+        boolean hasUsername = false;
+        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        String spPsw = sp.getString(userName, "");
+        if (!TextUtils.isEmpty(spPsw)) {
+            hasUsername = true;
+        }
+        return hasUsername;
+    }
+
+    /**
+     * 读取密保
+     * @param userName 用户名
+     * @return 密保
+     */
+    private String readSecurity(String userName) {
+        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        return sp.getString(userName + "_security", "");
+    }
+
+
+    /**
+     * 保存密保
+     * @param validateName 密保
+     */
     private void saveSecurity(String validateName) {
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
