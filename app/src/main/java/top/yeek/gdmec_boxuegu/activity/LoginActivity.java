@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
                 break;
             case R.id.tv_find_psw:
-                Toast.makeText(this, "跳转到返回密码界面，待完成", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, FindPswActivity.class));
                 break;
         }
     }

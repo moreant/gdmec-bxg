@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -52,16 +51,15 @@ public class SettingActivity extends AppCompatActivity {
                 break;
             case R.id.rl_modify_password:
                 startActivity(new Intent(this, ModifyPswActivity.class));
-
                 break;
             case R.id.rl_security_setting:
-                Toast.makeText(this, "设置密保", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, FindPswActivity.class);
+                intent.putExtra("from", "security");
+                startActivity(intent);
                 break;
             case R.id.rl_login_out:
                 clearLoginStatus();
-                Intent intent = new Intent();
-                intent.putExtra("isLogin", false);
-                setResult(RESULT_OK, intent);
+                setResult(RESULT_OK, new Intent().putExtra("isLogin", false));
                 this.finish();
                 break;
         }
