@@ -10,7 +10,7 @@
     <include layout="@layout/main_title_bar" />
 
     <RelativeLayout
-        android:id="@+id/avatar"
+        android:id="@+id/rl_avatar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
@@ -26,7 +26,7 @@
             tools:ignore="RelativeOverlap" />
 
         <ImageView
-            android:id="@+id/im_avatar"
+            android:id="@+id/iv_avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
@@ -40,7 +40,7 @@
         android:background="#E4E4E4" />
 
     <RelativeLayout
-        android:id="@+id/username"
+        android:id="@+id/rl_username"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
@@ -56,7 +56,7 @@
             tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:id="@+id/info_username"
+            android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -74,7 +74,7 @@
         android:background="#E4E4E4" />
 
     <RelativeLayout
-        android:id="@+id/nickname"
+        android:id="@+id/rl_nickname"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
@@ -90,7 +90,7 @@
             tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:id="@+id/info_nickname"
+            android:id="@+id/tv_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -108,7 +108,7 @@
         android:background="#E4E4E4" />
 
     <RelativeLayout
-        android:id="@+id/sex"
+        android:id="@+id/rl_sex"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
@@ -124,7 +124,7 @@
             tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:id="@+id/info_sex"
+            android:id="@+id/tv_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -142,7 +142,7 @@
         android:background="#E4E4E4" />
 
     <RelativeLayout
-        android:id="@+id/signature"
+        android:id="@+id/rl_signature"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="15dp"
@@ -158,7 +158,7 @@
             tools:ignore="RelativeOverlap" />
 
         <TextView
-            android:id="@+id/info_signature"
+            android:id="@+id/tv_signature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
