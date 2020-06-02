@@ -14,11 +14,17 @@ public class DBUtils {
     private final SQLiteDatabase db;
     private static DBUtils instance;
 
-    public DBUtils(Context context) {
+    private DBUtils(Context context) {
         helper = new SQLiteHelper(context);
         db = helper.getWritableDatabase();
     }
 
+    /**
+     * 获取数据库对象
+     *
+     * @param context 上下文
+     * @return 数据库对象
+     */
     public static DBUtils getInstance(Context context) {
         if (instance == null) {
             instance = new DBUtils(context);
@@ -26,6 +32,11 @@ public class DBUtils {
         return instance;
     }
 
+    /**
+     * 保存用户信息
+     *
+     * @param bean 用户实体
+     */
     public void saveUserInfo(UserBean bean) {
         ContentValues cv = new ContentValues();
         cv.put("userName", bean.userName);
@@ -35,6 +46,12 @@ public class DBUtils {
         db.insert(SQLiteHelper.USER_INFO, null, cv);
     }
 
+    /**
+     * 查询用户信息
+     *
+     * @param userName 用户名
+     * @return 用户实体
+     */
     public UserBean getUserInfo(String userName) {
         String sql = "SELECT * FROM " + SQLiteHelper.USER_INFO + " WHERE userName = ?";
         Cursor cursor = db.rawQuery(sql, new String[]{userName});
@@ -50,6 +67,13 @@ public class DBUtils {
         return bean;
     }
 
+    /**
+     * 更新用户信息
+     *
+     * @param key      名称
+     * @param value    内容
+     * @param userName 用户名
+     */
     public void updateUserInfo(String key, String value, String userName) {
         ContentValues cv = new ContentValues();
         cv.put(key, value);

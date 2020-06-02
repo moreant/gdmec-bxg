@@ -47,7 +47,7 @@ public class FindPswActivity extends AppCompatActivity {
         from = getIntent().getStringExtra("from");
         if ("security".equals(from)) {
             tvMainTitle.setText("设置密保");
-        }else{
+        } else {
             tvMainTitle.setText("找回密码");
             tvUserName.setVisibility(View.VISIBLE);
             etUsername.setVisibility(View.VISIBLE);
@@ -66,14 +66,14 @@ public class FindPswActivity extends AppCompatActivity {
                     tvMainTitle.setText("设置密保");
                     if (TextUtils.isEmpty(validateName)) {
                         Toast.makeText(this, "请输入要验证的姓名", Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         saveSecurity(validateName);
                         Toast.makeText(this, "设置成功", Toast.LENGTH_SHORT).show();
                         this.finish();
                     }
-                }else{
+                } else {
                     String userName = etUsername.getText().toString().trim();
-                    String sp_security =  readSecurity(userName);
+                    String sp_security = readSecurity(userName);
                     if (TextUtils.isEmpty(userName)) {
                         Toast.makeText(this, "请输入您的用户名", Toast.LENGTH_SHORT).show();
                     } else if (!isExistUserName(userName)) {
@@ -90,6 +90,11 @@ public class FindPswActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 重置密码
+     *
+     * @param userName 用户名
+     */
     private void savePsw(String userName) {
         String md5Psw = MD5Utils.md5("123456");
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
@@ -98,6 +103,12 @@ public class FindPswActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * 是否存在这个用户
+     *
+     * @param userName 用户名
+     * @return true: 存在这个用户
+     */
     private boolean isExistUserName(String userName) {
         boolean hasUsername = false;
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
@@ -110,6 +121,7 @@ public class FindPswActivity extends AppCompatActivity {
 
     /**
      * 读取密保
+     *
      * @param userName 用户名
      * @return 密保
      */
@@ -121,6 +133,7 @@ public class FindPswActivity extends AppCompatActivity {
 
     /**
      * 保存密保
+     *
      * @param validateName 密保
      */
     private void saveSecurity(String validateName) {

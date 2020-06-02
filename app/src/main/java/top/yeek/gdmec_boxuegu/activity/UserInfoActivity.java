@@ -61,9 +61,13 @@ public class UserInfoActivity extends AppCompatActivity {
         initData();
     }
 
+    /**
+     * 初始化数据
+     */
     private void initData() {
         UserBean bean = null;
         bean = DBUtils.getInstance(this).getUserInfo(spUserName);
+        // 如果数据库没有数据库 设置默认数据并存到数据库中
         if (bean == null) {
             bean = new UserBean();
             bean.userName = spUserName;
@@ -75,6 +79,11 @@ public class UserInfoActivity extends AppCompatActivity {
         setValue(bean);
     }
 
+    /**
+     * 将读取到的数据显示到视图中
+     *
+     * @param bean
+     */
     private void setValue(UserBean bean) {
         tvNickname.setText(bean.nickName);
         tvUsername.setText(bean.userName);
@@ -105,6 +114,11 @@ public class UserInfoActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 显示设置性别对话框
+     *
+     * @param sex 当前性别
+     */
     private void sexDialog(String sex) {
         int sexFlag = 0;
         if ("男".equals(sex)) {
@@ -126,6 +140,11 @@ public class UserInfoActivity extends AppCompatActivity {
         builder.create().show();
     }
 
+    /**
+     * 设置性别
+     *
+     * @param sex 性别
+     */
     private void setSex(String sex) {
         tvSex.setText(sex);
         DBUtils.getInstance(this).updateUserInfo("sex", sex, spUserName);

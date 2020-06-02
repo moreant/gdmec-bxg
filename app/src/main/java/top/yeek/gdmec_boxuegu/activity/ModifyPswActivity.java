@@ -105,6 +105,9 @@ public class ModifyPswActivity extends AppCompatActivity {
         return sp.getString(userName, "");
     }
 
+    /**
+     * 获取输入框的字符串
+     */
     private void getEditString() {
         originPsw = etOriginalPassword.getText().toString().trim();
         newPsw = etNewPassword.getText().toString().trim();
