@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/moreant/gdmec-bxg/compare/v1.6.0...v1.7.0) (2020-06-02)
+
+
+### Bug Fixes
+
+* **0324:** 修复登录账号使用错误密码时无 Toast 的问题 ([328dc85](https://github.com/moreant/gdmec-bxg/commit/328dc85be5e58f63033770c7802d632d26a9419a))
+
+
+### Features
+
+* **0427:** 使用 SQLite 存储读取用户信息 ([c99f442](https://github.com/moreant/gdmec-bxg/commit/c99f4427b56e0dbdc50db9a87d7c4e1d8bc20f49))
+* **0428:** 修改用户信息布局 ([f474eee](https://github.com/moreant/gdmec-bxg/commit/f474eeec19cbf88a4afe2955be75fb732c6a94eb))
+* **0428:** 读取 SQLite 中的信息和修改性别 ([429c966](https://github.com/moreant/gdmec-bxg/commit/429c966fd8471b106c779f53a0e940fb7695e89a))
+
+
+
 # [1.6.0](https://github.com/moreant/gdmec-bxg/compare/v1.5.0...v1.6.0) (2020-06-02)
 
 
