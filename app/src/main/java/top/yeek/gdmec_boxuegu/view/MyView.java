@@ -71,7 +71,7 @@ public class MyView {
             case R.id.ll_head:
                 if (readLoginStatus()) {
                     // 跳转到个人页面
-                    Toast.makeText(activity, "个人页面", Toast.LENGTH_SHORT).show();
+                    activity.startActivity(new Intent(activity, UserInfoActivity.class));
                 } else {
                     // 跳转到登录界面
                     Intent intent = new Intent(activity, LoginActivity.class);
