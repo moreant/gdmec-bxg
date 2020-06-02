@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(this, "请输入用户名", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(psw)) {
                     Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
-                } else if (!md5Psw.equals(spPsw) && TextUtils.isEmpty(spPsw)) {
+                } else if (!md5Psw.equals(spPsw) && !TextUtils.isEmpty(spPsw)) {
                     Toast.makeText(this, "输入的用户名和密码不一致", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(spPsw)) {
                     Toast.makeText(this, "用户名不存在", Toast.LENGTH_SHORT).show();
