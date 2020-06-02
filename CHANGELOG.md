@@ -1,3 +1,21 @@
+# [1.6.0](https://github.com/moreant/gdmec-bxg/compare/v1.5.0...v1.6.0) (2020-06-02)
+
+
+### Bug Fixes
+
+* **0413:** 修复我的界面初始化不获取用户名的问题 ([dd25c5b](https://github.com/moreant/gdmec-bxg/commit/dd25c5bf74a81a42707ea4200b876d3a48d88c87))
+
+
+### Features
+
+* **0420:** 修改密码界面逻辑代码 ([b390b51](https://github.com/moreant/gdmec-bxg/commit/b390b51068c9588385f69d9984f8f9f5c19a21c3))
+* **0421:** 设置密保 ([60176d9](https://github.com/moreant/gdmec-bxg/commit/60176d90e2329048f037367fb6a54ebb5bf374ed))
+* **0421:** 设置密保界面布局 ([b02d5cc](https://github.com/moreant/gdmec-bxg/commit/b02d5cc5227773348dfe8e8f6a2621078a8fd546))
+* **0426:** 找回密码 ([d78be3e](https://github.com/moreant/gdmec-bxg/commit/d78be3ec0b88e48f3931451377cdf23c5e61fbdb))
+* **0426:** 用户信息界面布局 ([1355c18](https://github.com/moreant/gdmec-bxg/commit/1355c18320e7259a37b4d9ae60fb792dc5fb514e))
+
+
+
 # [1.5.0](https://github.com/moreant/gdmec-bxg/compare/v1.4.0...v1.5.0) (2020-06-01)
 
 
