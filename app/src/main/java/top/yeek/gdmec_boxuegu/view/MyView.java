@@ -18,6 +18,7 @@ import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
 import top.yeek.gdmec_boxuegu.activity.LoginActivity;
 import top.yeek.gdmec_boxuegu.activity.SettingActivity;
+import top.yeek.gdmec_boxuegu.activity.UserInfoActivity;
 import top.yeek.gdmec_boxuegu.utils.AnalysisUtils;
 
 public class MyView {
@@ -61,6 +62,7 @@ public class MyView {
     private void initView() {
         view = inflater.inflate(R.layout.main_view_my, null);
         ButterKnife.bind(this, view);
+        setLoginParams(readLoginStatus());
     }
 
     @OnClick({R.id.ll_head, R.id.rl_history, R.id.rl_setting})
