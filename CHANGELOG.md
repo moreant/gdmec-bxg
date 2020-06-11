@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/moreant/gdmec-bxg/compare/v1.8.0...v1.9.0) (2020-06-11)
+
+
+### Features
+
+* **0511:** 习题列表布局 ([dfeee8f](https://github.com/moreant/gdmec-bxg/commit/dfeee8fab6522f144c1816f0b9c61cbb02077379))
+* **0512:** 显示习题列表的逻辑代码 ([6fab70e](https://github.com/moreant/gdmec-bxg/commit/6fab70ee15f661d2ee5b4c1da0a16dde64b9994f))
+
+
+
 # [1.8.0](https://github.com/moreant/gdmec-bxg/compare/v1.7.0...v1.8.0) (2020-06-11)
 
 
