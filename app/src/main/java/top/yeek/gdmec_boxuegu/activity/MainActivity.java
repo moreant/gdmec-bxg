@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.yeek.gdmec_boxuegu.R;
+import top.yeek.gdmec_boxuegu.view.ExercisesView;
 import top.yeek.gdmec_boxuegu.view.MyView;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout rlMy;
     @BindView(R.id.ll_bottom_bar)
     LinearLayout llBottomBar;
+    private ExercisesView exercisesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,8 +154,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "课程界面", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
-                // 习题
-                Toast.makeText(this, "习题界面", Toast.LENGTH_SHORT).show();
+                if (exercisesView == null) {
+                    exercisesView = new ExercisesView(this);
+                    flBody.addView(exercisesView.getView());
+                } else {
+                    exercisesView.getView();
+                }
+                exercisesView.showView();
                 break;
             case 2:
                 // 我的
