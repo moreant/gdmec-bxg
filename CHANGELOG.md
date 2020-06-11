@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/moreant/gdmec-bxg/compare/v1.7.0...v1.8.0) (2020-06-11)
+
+
+### Features
+
+* **0509:** 修改用户信息逻辑代码 ([0b0e645](https://github.com/moreant/gdmec-bxg/commit/0b0e6453eeeb562c7f3bb6651c3437a7e1e1a5f1))
+
+
+
 # [1.7.0](https://github.com/moreant/gdmec-bxg/compare/v1.6.0...v1.7.0) (2020-06-02)
 
 
