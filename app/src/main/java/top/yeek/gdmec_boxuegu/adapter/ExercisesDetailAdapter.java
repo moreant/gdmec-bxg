@@ -1,6 +1,7 @@
 package top.yeek.gdmec_boxuegu.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,9 +29,9 @@ public class ExercisesDetailAdapter extends BaseAdapter {
     private List<String> selectedPosition = new ArrayList<>();
     private OnSelectListener onSelectListener;
 
-    public ExercisesDetailAdapter(Context context, List<ExercisesBean> ebl) {
+    public ExercisesDetailAdapter(Context context, OnSelectListener onSelectListener) {
         this.context = context;
-        this.ebl = ebl;
+        this.onSelectListener = onSelectListener;
     }
 
     @Override
@@ -170,57 +171,63 @@ public class ExercisesDetailAdapter extends BaseAdapter {
                 default:
                     break;
             }
-
-            vh.ivA.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (selectedPosition.contains("" + position)) {
-
-                    }else{
-                        selectedPosition.add("" + position);
-                    }
-                    onSelectListener.onSelectA(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
-                }
-            });
-
-            vh.ivB.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (selectedPosition.contains("" + position)) {
-
-                    }else{
-                        selectedPosition.add("" + position);
-                    }
-                    onSelectListener.onSelectB(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
-                }
-            });
-
-            vh.ivC.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (selectedPosition.contains("" + position)) {
-
-                    }else{
-                        selectedPosition.add("" + position);
-                    }
-                    onSelectListener.onSelectC(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
-                }
-            });
-
-            vh.ivD.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (selectedPosition.contains("" + position)) {
-
-                    }else{
-                        selectedPosition.add("" + position);
-                    }
-                    onSelectListener.onSelectD(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
-                }
-            });
         }
 
+        vh.ivA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("TAG", "onClick: 123");
+                if (selectedPosition.contains("" + position)) {
+
+                }else{
+                    selectedPosition.add("" + position);
+                }
+                onSelectListener.onSelectA(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
+            }
+        });
+
+        vh.ivB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedPosition.contains("" + position)) {
+
+                }else{
+                    selectedPosition.add("" + position);
+                }
+                onSelectListener.onSelectB(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
+            }
+        });
+
+        vh.ivC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedPosition.contains("" + position)) {
+
+                }else{
+                    selectedPosition.add("" + position);
+                }
+                onSelectListener.onSelectC(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
+            }
+        });
+
+        vh.ivD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectedPosition.contains("" + position)) {
+
+                }else{
+                    selectedPosition.add("" + position);
+                }
+                onSelectListener.onSelectD(position, vh.ivA, vh.ivB, vh.ivC, vh.ivD);
+            }
+        });
+
         return convertView;
+    }
+
+    public void setData(List<ExercisesBean> ebl) {
+        this.ebl = ebl;
+        notifyDataSetChanged();
     }
 
     static
