@@ -73,6 +73,8 @@ public class ExerciseAdapter extends BaseAdapter {
             vh.tvTitle.setText(exercisesBean.getTitle());
             vh.tvContent.setText(exercisesBean.getContent());
             vh.tvOrder.setBackgroundResource(exercisesBean.getBackground());
+        }else{
+            //下节课
         }
 
         convertView.setOnClickListener(new View.OnClickListener() {

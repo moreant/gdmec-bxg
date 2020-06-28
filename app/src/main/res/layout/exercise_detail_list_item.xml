@@ -23,7 +23,7 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/im_a"
+            android:id="@+id/iv_a"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/exercises_a" />
@@ -48,7 +48,7 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/im_b"
+            android:id="@+id/iv_b"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/exercises_b" />
@@ -73,7 +73,7 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/im_c"
+            android:id="@+id/iv_c"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/exercises_c" />
@@ -98,7 +98,7 @@
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/im_d"
+            android:id="@+id/iv_d"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/exercises_d" />
