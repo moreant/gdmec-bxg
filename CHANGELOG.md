@@ -1,3 +1,13 @@
+# [1.10.0](https://github.com/moreant/gdmec-bxg/compare/v1.9.0...v1.10.0) (2020-06-28)
+
+
+### Features
+
+* 习题详情界面、数据存放 ([0d2784d](https://github.com/moreant/gdmec-bxg/commit/0d2784dee45adce1dbcdb3d752ebd63457e78226))
+* 解析xml文件、习题详情部分逻辑代码 ([25c3afd](https://github.com/moreant/gdmec-bxg/commit/25c3afd5d4ba370379df18217be33fb9680c3dd1))
+
+
+
 # [1.9.0](https://github.com/moreant/gdmec-bxg/compare/v1.8.0...v1.9.0) (2020-06-11)
 
 
