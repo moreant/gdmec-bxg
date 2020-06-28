@@ -1,3 +1,18 @@
+# [1.11.0](https://github.com/moreant/gdmec-bxg/compare/v1.10.0...v1.11.0) (2020-06-28)
+
+
+### Bug Fixes
+
+* **0525:** 修复选项没有监听器，构造函数参数错误 ([9e620e3](https://github.com/moreant/gdmec-bxg/commit/9e620e300fde83e69079a08ab84ecea3e1b33de9))
+
+
+### Features
+
+* **0525:** 习题适配器逻辑 ([9236fdb](https://github.com/moreant/gdmec-bxg/commit/9236fdb76f68f1f2cae048669380651a880bcc5f))
+* **0526:** 习题详情逻辑代码 ([c66ea53](https://github.com/moreant/gdmec-bxg/commit/c66ea53b337a3d3a9f86562f0701aee4938b11c4))
+
+
+
 # [1.10.0](https://github.com/moreant/gdmec-bxg/compare/v1.9.0...v1.10.0) (2020-06-28)
 
 
