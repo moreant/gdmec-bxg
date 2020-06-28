@@ -1,18 +1,19 @@
 package top.yeek.gdmec_boxuegu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import top.yeek.gdmec_boxuegu.R;
+import top.yeek.gdmec_boxuegu.activity.ExercisesDetailActivity;
 import top.yeek.gdmec_boxuegu.bean.ExercisesBean;
 
 /**
@@ -81,7 +82,10 @@ public class ExerciseAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if (exercisesBean != null) {
-                    Toast.makeText(context, "跳转到习题", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, ExercisesDetailActivity.class);
+                    intent.putExtra("id",exercisesBean.getId());
+                    intent.putExtra("title",exercisesBean.getTitle());
+                    context.startActivity(intent);
                 }
             }
         });
